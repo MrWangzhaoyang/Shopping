@@ -78,7 +78,7 @@ namespace Shopping.Api
                 m.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
             });
 
-            app.UseCors();
+            app.UseCors("any");
 
             app.UseRouting();
 

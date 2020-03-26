@@ -20,8 +20,8 @@ namespace Shopping.Api
             Host.CreateDefaultBuilder(args)
             .ConfigureLogging((context, logger) =>
             {
-                logger.AddFilter("Api", LogLevel.Warning);
-                logger.AddFilter("ApiSystem", LogLevel.Warning);
+                logger.AddFilter("System", LogLevel.Warning);
+                logger.AddFilter("Microsoft", LogLevel.Warning);
                 logger.AddLog4Net();
             })
                 .ConfigureWebHostDefaults(webBuilder =>

@@ -5,18 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Shopping.Api.Models;
 
 namespace Shopping.Api.Controllers
 {
-    [EnableCors("any")]
+    //[EnableCors("any")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseController
     {
         private ShoppingContext _context;
-        public ProductsController(ShoppingContext context)
+        private ILogger<ProductsController> _logger;
+        public ProductsController(ShoppingContext context, ILogger<ProductsController> logger)
         {
+            this._logger = logger;
             this._context = context;
         }
 
